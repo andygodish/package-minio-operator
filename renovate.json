@@ -8,7 +8,7 @@
       "customType": "regex",
       "managerFilePatterns": ["/\\.ya?ml$/"],
         "matchStrings": [
-          "(?<indent>\\s*)- name: PACKAGE_VERSION\\s*\\n\\s*description: \"Version of the package\"\\s*\\n\\s*default: \"(?<currentValue>[^\"]+)\""
+          "(?m)^(?<indent>[ \\t]*)- name: PACKAGE_VERSION\\s*\\n[ \\t]*description: \"Version of the package\"\\s*\\n[ \\t]*default: \"(?<currentValue>[^\"]+)\""
         ],
         "datasourceTemplate": "github-releases",
         "depNameTemplate": "defenseunicorns/uds-package-minio-operator",
