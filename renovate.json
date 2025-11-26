@@ -8,13 +8,13 @@
       "customType": "regex",
       "managerFilePatterns": ["/\\.ya?ml$/"],
         "matchStrings": [
-          "(?m)^(?<indent>[ \\t]*)- name: PACKAGE_VERSION\\s*\\n[ \\t]*description: \"Version of the package\"\\s*\\n[ \\t]*default: \"(?<currentValue>[^\"]+)\""
+          "(?m)^\\s*- name: PACKAGE_VERSION\\s*\\n\\s*description: \"Version of the package\"\\s*\\n\\s*default: \"(?<currentValue>[^\"]+)\""
         ],
         "datasourceTemplate": "github-releases",
         "depNameTemplate": "defenseunicorns/uds-package-minio-operator",
         "extractVersionTemplate": "^(?:minio-operator\\s+)?v?(?<version>\\d+\\.\\d+\\.\\d+-uds\\.\\d+)-(?:upstream|unicorn|registry1)$",
         "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-uds\\.(?<build>\\d+)$",
-        "autoReplaceStringTemplate": "{{{indent}}}- name: PACKAGE_VERSION\n{{{indent}}}  description: \"Version of the package\"\n{{{indent}}}  default: \"{{{version}}}\""
+        "autoReplaceStringTemplate": "  - name: PACKAGE_VERSION\n    description: \"Version of the package\"\n    default: \"{{{version}}}\""
       }
     ],
 
