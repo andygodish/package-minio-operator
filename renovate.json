@@ -25,8 +25,7 @@
       "groupName": "Minio Operator Package",
       "semanticCommitType": "deps",
       "semanticCommitScope": "minio",
-      "commitMessageTopic": "Minio Operator package",
-      "prTitle": "deps(minio): update minio operator package to {{newVersion}}"
+      "commitMessageTopic": "Minio Operator package"
     }
   ]
 }
