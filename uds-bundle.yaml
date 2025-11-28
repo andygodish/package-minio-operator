@@ -6,3 +6,9 @@ packages:
   - name: minio-operator
     repository: ghcr.io/defenseunicorns/packages/private/uds/minio-operator
     ref: 7.1.1-uds.5-unicorn
+    overrides:
+      minio-operator:
+        minio-tenant:
+          variables:
+            - path: tenant.pools
+              name: TENANT_POOLS

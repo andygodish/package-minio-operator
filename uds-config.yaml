@@ -1,0 +1,11 @@
+options:
+  tmp_dir: /var/tmp
+shared:
+  domain: uds.local
+variables:
+  minio-operator:
+    TENANT_POOLS: 
+      - servers: 1
+        name: zarf-registry-backup
+        volumesPerServer: 1
+        size: 50Gi
