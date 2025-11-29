@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-minio-egress-all-pods-uds-dev-stack-minio
+  namespace: minio
+spec:
+  egress:
+  - ports:
+    - port: 9000
+      protocol: TCP
+    - port: 15008
+      protocol: TCP
+    to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: uds-dev-stack
+      podSelector:
+        matchLabels:
+          app: minio
+  podSelector: {}
+  policyTypes:
+  - Egress
+
