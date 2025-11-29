@@ -12,3 +12,7 @@ packages:
           variables:
             - path: tenant.pools
               name: TENANT_POOLS
+        uds-minio-config:
+          variables:
+            - path: additionalNetworkAllow
+              name: ADDITIONAL_NETWORK_ALLOW

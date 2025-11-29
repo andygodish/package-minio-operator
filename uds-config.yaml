@@ -4,6 +4,12 @@ shared:
   domain: uds.local
 variables:
   minio-operator:
+    ADDITIONAL_NETWORK_ALLOW:
+      - direction: Egress
+        remoteNamespace: uds-dev-stack
+        remoteSelector:
+          app: minio
+        port: 9000
     TENANT_POOLS: 
       - servers: 1
         name: zarf-registry-backup
