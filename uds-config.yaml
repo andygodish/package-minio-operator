@@ -5,11 +5,13 @@ shared:
 variables:
   minio-operator:
     ADDITIONAL_NETWORK_ALLOW:
+      # For connecting to the dev-stack minio using mc inside the minio tenant pods
       - direction: Egress
         remoteNamespace: uds-dev-stack
         remoteSelector:
           app: minio
         port: 9000
+      # For allowing the zarf docker-registry to change its OCI backend
       - direction: Ingress
         remoteNamespace: zarf
         remoteSelector:
