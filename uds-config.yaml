@@ -10,6 +10,11 @@ variables:
         remoteSelector:
           app: minio
         port: 9000
+      - direction: Ingress
+        remoteNamespace: zarf
+        remoteSelector:
+          app: docker-registry
+        port: 9000
     TENANT_POOLS: 
       - servers: 1
         name: zarf-registry-backup
