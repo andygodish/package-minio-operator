@@ -1,11 +1,11 @@
 kind: UDSBundle
 metadata:
   name: minio-operator
-  version: 7.1.1-uds.5
+  version: 7.1.1-uds.6
 packages:
   - name: minio-operator
-    repository: ghcr.io/defenseunicorns/packages/private/uds/minio-operator
-    ref: 7.1.1-uds.5-unicorn
+    repository: ghcr.io/uds-packages/minio-operator
+    ref: 7.1.1-uds.6-upstream
     overrides:
       minio-operator:
         minio-tenant:

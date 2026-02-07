@@ -4,14 +4,14 @@ includes:
 variables:
   - name: REGISTRY
     description: "Remote OCI registry for the Core package"
-    default: "ghcr.io/defenseunicorns/packages/private/uds"
+    default: "ghcr.io/uds-packages"
   - name: PACKAGE_NAME
     default: "minio-operator"
   - name: PACKAGE_VERSION
     description: "Version of the package"
     default: "7.1.1-uds.6"
   - name: PACKAGE_FLAVOR
-    default: "unicorn"
+    default: "upstream"
   - name: ARCHITECTURE
     description: "System architecture (amd64 or arm64)"
     default: ""
