@@ -1,0 +1,24 @@
+options:
+  tmp_dir: /var/tmp
+shared:
+  domain: uds.local
+variables:
+  minio-operator:
+    ADDITIONAL_NETWORK_ALLOW:
+      # For connecting to the dev-stack minio using mc inside the minio tenant pods
+      - direction: Egress
+        remoteNamespace: uds-dev-stack
+        remoteSelector:
+          app: minio
+        port: 9000
+      # For allowing the zarf docker-registry to change its OCI backend
+      - direction: Ingress
+        remoteNamespace: zarf
+        remoteSelector:
+          app: docker-registry
+        port: 9000
+    TENANT_POOLS: 
+      - servers: 1
+        name: zarf-registry-backup
+        volumesPerServer: 1
+        size: 50Gi
