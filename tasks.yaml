@@ -9,7 +9,7 @@ variables:
     default: "minio-operator"
   - name: PACKAGE_VERSION
     description: "Version of the package"
-    default: "7.1.1-uds.6"
+    default: "7.1.1-uds.8"
   - name: PACKAGE_FLAVOR
     default: "upstream"
   - name: ARCHITECTURE
